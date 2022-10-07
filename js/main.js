@@ -345,20 +345,18 @@ function Get__Student__Data(DATA) {
 
   let Students__Item = document.querySelectorAll("[Students__Item__Wrapper] .Student__item");
 
-  Students__Item.forEach(item => {
-    item.addEventListener("click", Show__Student__Details);
+  Students__Item.forEach((item, index) => {
+    item.addEventListener("click", () => {
+      item.classList.toggle('show__details');
+      remove__Show_Details(index)
+    });
   });
 
-  function Show__Student__Details() {
-    Students__Item.forEach(item => {
-      item.addEventListener("click", () => {
-        if (this.classList.contains('show__details')) {
-          this.classList.remove('show__details');
-        } else {
-          Students__Item.forEach(i => { i.classList.remove('show__details') });
-          this.classList.add('show__details');
-        }
-      });
+  function remove__Show_Details(index1) {
+    Students__Item.forEach((item, index2) => {
+      if (index1 != index2) {
+        item.classList.remove('show__details');
+      };
     });
   }
 }
