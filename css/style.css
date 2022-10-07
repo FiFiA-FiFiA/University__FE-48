@@ -532,9 +532,10 @@ main .Students__Item__Wrapper .Student__item .back__wrapper .back__details__Wrap
 
 @media screen and (max-width: 430px) {
   main .main__header select {
-    width: 130px;
+    width: 115px;
   }
   main .Students__Item__Wrapper .Student__item {
     width: 100%;
+    min-width: 320px;
   }
 }
